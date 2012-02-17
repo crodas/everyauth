@@ -203,6 +203,7 @@ everyauth.linkedin
   .redirectPath('/');
 
 everyauth.google
+  .myHostname('http://localhost:3000')
   .appId(conf.google.clientId)
   .appSecret(conf.google.clientSecret)
   .scope('https://www.google.com/m8/feeds/')
