@@ -206,7 +206,9 @@ everyauth.google
   .myHostname('http://localhost:3000')
   .appId(conf.google.clientId)
   .appSecret(conf.google.clientSecret)
-  .scope('https://www.google.com/m8/feeds/')
+  .scope('https://www.google.com/m8/feeds/ '
+        + 'https://www.googleapis.com/auth/userinfo.profile '
+        + 'https://www.googleapis.com/auth/userinfo.email')
   .findOrCreateUser( function (sess, accessToken, extra, googleUser) {
     googleUser.refreshToken = extra.refresh_token;
     googleUser.expiresIn = extra.expires_in;
